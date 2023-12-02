@@ -32,16 +32,31 @@ class FestiveWishGenerator:
         return wish
 
 if __name__ == "__main__":
-    # Get user input for cohort
-    cohort_name = input("Enter your ALX Cohort number: ")
+    # Get user input for cohort with error handling
+    while True:
+        try:
+            cohort_name = int(input("Enter your ALX Cohort number: "))
+            if cohort_name < 1:
+                raise ValueError("Invalid Cohort number. Please enter a number greater than or equal to 1.")
+            break
+        except ValueError as e:
+            print(f"Error: {e}")
 
     # Display celebration options
     print("Choose a celebration:")
     for number, celebration in FestiveWishGenerator().celebrations.items():
         print(f"{number}. {celebration}")
 
-    # Get user input for celebration by number
-    celebration_number = int(input("Enter the number of the celebration you want to wish for: "))
+    # Get user input for celebration by number with error handling
+    while True:
+        try:
+            celebration_number = int(input("Enter the number of the celebration you want to wish for: "))
+            if celebration_number < 1 or celebration_number > 5:
+                raise ValueError("Invalid celebration number. Please enter a number between 1 and 5.")
+            break
+        except ValueError as e:
+            print(f"Error: {e}")
+
     selected_celebration = FestiveWishGenerator().celebrations.get(celebration_number, 'Unknown Celebration')
 
     # Create an instance of the FestiveWishGenerator
