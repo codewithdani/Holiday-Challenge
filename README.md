@@ -9,7 +9,7 @@ The Festive Wish Generator is a Python script that allows users to create imagin
 ## Usage
 
 1. Clone this repository.
-   git clone https://github.com/codewithdani/festive_wish_generator.git
+   git clone https://github.com/codewithdani/Holiday-Challenge
 
 Run the script.
 python festive_wish_generator.py
